@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>
+         PRESIDENT
+     </title>
+ </head>
+<body>
+
+<h2>PRESIDENT GUESS BY GOPI KISHORE SUKASI</h2>
+
+<form>
+    <div class="row">
+        <label for="firstname">Enter the secret president name</label>
+        <input type ="password" id="firstname" name="firstname" class="input-group form-control" value="George Washington"> 
+    </div>
+    <div class="row">
+        <label for="form1_nick">Guess the president</label>
+        <input type ="text" id="form1_nick" name="form1_nick"class="input-group form-control" autofocus>
+    </div>
+    <div class="row">
+        <input type="button" onclick="checkGuess()" value="Check the guess">
+    </div>
+
+  
+
+   
+</form>
+
+
+<p id="result"> </p>
+
+<script> 
+ let correct =0,wrong =0;
+function checkGuess(){
+   
+    secret = document.getElementById("firstname").value
+    guess = document.getElementById("form1_nick").value
+    
+    out = document.getElementById("result")
+    if(secret == guess){
+        correct = correct + 1;
+        out.innerHTML = "Correct Count: " + correct  + "\nWrong Count: " + wrong
+        alert('You got it right');
+    } else {
+        wrong = wrong + 1;
+        out.innerHTML = "Correct Count: " + correct  + "\nWrong Count: " + wrong
+        alert('Wrong President');
+    }
+}
+</script>
+
+</body>
+</html> 
