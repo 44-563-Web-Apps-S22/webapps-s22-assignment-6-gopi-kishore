@@ -44,23 +44,12 @@ function orderComputer (){
     mouse_chk = document.getElementById("mouse1").checked
     cell_chk = document.getElementById("cell1").checked
     my_computer = {};
-
     out = document.getElementById("result")
     if(mem_chk){
-        my_computer.extra = true;
-    } else {
-        my_computer.extra = false;
+        my_computer.extra = true;    } else { my_computer.extra = false;
     }
-    if(mouse_chk){
-        my_computer.mouse = true;
-    } else {
-        my_computer.mouse = false;
-    }
-    if(cell_chk){
-        my_computer.cell = true;
-    } else {
-        my_computer.cell = false;
-    }
+    if(mouse_chk){my_computer.mouse = true;} else {  my_computer.mouse = false;}
+    if(cell_chk){my_computer.cell = true;} else {my_computer.cell = false;    }
     out.innerHTML="my_computer{"+"\"extra\": "+my_computer.extra+",\"mouse\": "+my_computer.mouse+", \"cell\": "+my_computer.cell+"}";
 }
 
