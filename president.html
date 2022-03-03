@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html>
- <head>
-     <title>
-         PRESIDENT
-     </title>
- </head>
+
+<head>
+    <title>
+        PRESIDENT
+    </title>
+</head>
+
 <body>
 
-<h2>PRESIDENT GUESS BY GOPI KISHORE SUKASI</h2>
+    <h2>PRESIDENT GUESS BY GOPI KISHORE SUKASI</h2>
 
-<form>
-    <div class="row">
-        <label for="firstname">Enter the secret president name</label>
-        <input type ="password" id="firstname" name="firstname" class="input-group form-control" value="George Washington"> 
+    <form>
+        <div class="row">
+            <label for="firstname">Enter the secret president name</label>
+            <input type="password" id="firstname" name="firstname" class="input-group form-control"
+                value="George Washington">
+        </div>
+        <div class="row">
+            <label for="form1_nick">Guess the president</label>
+            <input type="text" id="form1_nick" name="form1_nick" class="input-group form-control" autofocus>
+        </div>
+        <div class="row">
+            <input type="button" onclick="checkGuess()" value="Check the guess">
+        </div>
+
+
+
+
+    </form>
+
+
+    <p id="result"> </p>
+
+    <div class="container">
+        <img id="img"  src="SPARROW.jpg" width="100" height="100" alt="SPARROW" onclick="swapImage()" />
     </div>
-    <div class="row">
-        <label for="form1_nick">Guess the president</label>
-        <input type ="text" id="form1_nick" name="form1_nick"class="input-group form-control" autofocus>
-    </div>
-    <div class="row">
-        <input type="button" onclick="checkGuess()" value="Check the guess">
-    </div>
 
-  
+    <script>
+        let correct = 0, wrong = 0, usingImage = 1;
+        function checkGuess() {
 
-   
-</form>
+            secret = document.getElementById("firstname").value
+            guess = document.getElementById("form1_nick").value
 
+            out = document.getElementById("result")
+            if (secret == guess) {
+                correct = correct + 1;
+                out.innerHTML = "Correct Count: " + correct + "\nWrong Count: " + wrong
+                alert('You got it right');
+            } else {
+                wrong = wrong + 1;
+                out.innerHTML = "Correct Count: " + correct + "\nWrong Count: " + wrong
+                alert('Wrong President');
+            }
+        }
+        function swapImage() {
+            switch (usingImage) {
+                case 1:
+                    document.getElementById("img").src = "SPARROW.jpg"
+                    usingImage = 2
+                    break
+                case 2:
+                    document.getElementById("img").src = "OWL.jpg"
+                    usingImage = 3
+                    break
+                case 3:
+                    document.getElementById("img").src = "kingfisher.jpg"
+                    usingImage = 1
+                    break
 
-<p id="result"> </p>
+            }
 
-<script> 
- let correct =0,wrong =0;
-function checkGuess(){
-   
-    secret = document.getElementById("firstname").value
-    guess = document.getElementById("form1_nick").value
-    
-    out = document.getElementById("result")
-    if(secret == guess){
-        correct = correct + 1;
-        out.innerHTML = "Correct Count: " + correct  + "\nWrong Count: " + wrong
-        alert('You got it right');
-    } else {
-        wrong = wrong + 1;
-        out.innerHTML = "Correct Count: " + correct  + "\nWrong Count: " + wrong
-        alert('Wrong President');
-    }
-}
-</script>
+        }
+        
+    </script>
 
 </body>
-</html> 
+
+</html>
